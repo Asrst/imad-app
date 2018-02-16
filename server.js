@@ -25,8 +25,7 @@ var articles = {
         heading :`Article-One on my First web App`,
         date: 'Today,18-02-2018',
         content: `<p>This is my first article on my first web App. I just writing few sentences to experiment with my web App, just for pratice. This is my first article on my first web App. This is my first article on my first web App</p>`
-        },
-    
+        }
     };
     
     
@@ -69,13 +68,10 @@ function createTemplate(data){
         
         </body>
      
-    </html>`
+    </html>`;
     
     return htmlTemplate;
-     
 }
-
-
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
