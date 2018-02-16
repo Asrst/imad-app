@@ -29,7 +29,8 @@ var articles = {
     
     };
     
-    function createTemplate(data){
+    
+function createTemplate(data){
         var title = data.title;
         var heading = data.heading;
         var date = data.date;
@@ -80,7 +81,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/articlw-one', function (req, res) {
+app.get('/article-one', function (req, res) {
     res.send(createTemplate(articleOne));
 });
 
