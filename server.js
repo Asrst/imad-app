@@ -26,7 +26,7 @@ app.use(morgan('combined'));
         date: 'Today,18-02-2018',
         content: `<p>This is my first article on my first web App. I just writing few sentences to experiment with my web App, just for pratice. This is my first article on my first web App. This is my first article on my first web App</p>` }
        
-   }
+   };
    
 function createTemplate(data){
         var title = data.title;
