@@ -12,13 +12,13 @@ app.use(morgan('combined'));
         title : `Article One | Asr`,
         heading :`Article-One on my First web App`,
         date: 'Today,16-02-2018',
-        content: `<p>This is my first article on my first web App. I just writing few sentences to experiment with my web App, just for pratice.This is my first article on my first web App.This is my first article on my first web App</p>` }
+        content: `<p>This is my first article on my first web App. I just writing few sentences to experiment with my web App, just for pratice.This is my first article on my first web App.This is my first article on my first web App</p>` },
     
     articleTwo: {
         title : `Article Two | Asr`,
         heading :`Article-One on my First web App`,
         date: 'Today,17-02-2018',
-        content: `<p>This is my first article on my first web App. I just writing few sentences to experiment with my web App, just for pratice.This is my first article on my first web App This is my first article on my first web App</p>`}
+        content: `<p>This is my first article on my first web App. I just writing few sentences to experiment with my web App, just for pratice.This is my first article on my first web App This is my first article on my first web App</p>`}, 
     
     articleThree: {
         title : `Article Three | Asr`,
