@@ -8,19 +8,19 @@ app.use(morgan('combined'));
     
    articles = { 
     
-    "articleOne": {
+    "article-one": {
         title : `Article One | Asr`,
         heading :`Article-One on my First web App`,
         date: 'Today,16-02-2018',
         content: `<p>This is my first article on my first web App. I just writing few sentences to experiment with my web App, just for pratice.This is my first article on my first web App.This is my first article on my first web App</p>` },
     
-    "articleTwo": {
+    "article-two": {
         title : `Article Two | Asr`,
         heading :`Article-One on my First web App`,
         date: 'Today,17-02-2018',
         content: `<p>This is my first article on my first web App. I just writing few sentences to experiment with my web App, just for pratice.This is my first article on my first web App This is my first article on my first web App</p>`}, 
     
-    articleThree: {
+    "article-three": {
         title : `Article Three | Asr`,
         heading :`Article-One on my First web App`,
         date: 'Today,18-02-2018',
@@ -76,8 +76,11 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function (req, res) {
-    res.send(createTemplate(articles["articleOne"]));
+app.get('/:articleName',function(req, res){
+// articleName == article-one
+//articles[articleName] == {} Content object for article one
+var articleName = req.params.articlename;
+res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/ui/style.css', function (req, res) {
