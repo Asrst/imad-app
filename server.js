@@ -6,15 +6,15 @@ var app = express();
 app.use(morgan('combined'));
 
     
-   articles =  { 
+   articles = { 
     
-    articleOne: {
+    "articleOne": {
         title : `Article One | Asr`,
         heading :`Article-One on my First web App`,
         date: 'Today,16-02-2018',
         content: `<p>This is my first article on my first web App. I just writing few sentences to experiment with my web App, just for pratice.This is my first article on my first web App.This is my first article on my first web App</p>` },
     
-    articleTwo: {
+    "articleTwo": {
         title : `Article Two | Asr`,
         heading :`Article-One on my First web App`,
         date: 'Today,17-02-2018',
@@ -48,7 +48,7 @@ function createTemplate(data){
             <div class = container>
             
                <div>
-                <a href = "/">Home</a>
+                <a href = "/"> Home </a>
                </div>
              
                <h2>
@@ -77,7 +77,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/article-one', function (req, res) {
-    res.send(createTemplate(articles[articleOne]));
+    res.send(createTemplate(articles["articleOne"]));
 });
 
 app.get('/ui/style.css', function (req, res) {
