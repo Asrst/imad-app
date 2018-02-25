@@ -87,7 +87,6 @@ var names = [];
 app.get('/submit-name',function(req, res){
 // articleName == article-one
 var name = req.query.name;
-
 names.push(name);
 res.send(JSON.stringify(names));
 });
