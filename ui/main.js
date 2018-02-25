@@ -1,8 +1,5 @@
 console.log('Loaded!');
 
-var element = document.getElementById('main-text');
-element.InnerHTML = 'New Value';
-
 var button = document.getElementById('counter');
 var counter = 0;
 
