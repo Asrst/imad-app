@@ -8,13 +8,12 @@ button.Onclick = function(){
     var request = new XMLHttprequest();
     
     request.onreadystatechange = function() {
-        if(request.readystate === XMLHttpRequest.DONE) {
+        if(request.readyState === XMLHttpRequest.DONE) {
             if(request.status === 200){
                 
              var counter = request.responseText;
-             counter = counter+1;
              var span = document.getElementById('counterSpan');
-             span.InnerHTML = counter.toString();
+             span.innerHTML = counter.toString();
 
             }
         }
@@ -35,7 +34,7 @@ submit.Onclick = function() {
     var request = new XMLHttpRequest();
     
     request.onreadystatechange = function() {
-        if(request.readystate === XMLHttpRequest.DONE) {
+        if(request.readyState === XMLHttpRequest.DONE) {
             if(request.status === 200){
                 
               var names = request.responseText;
@@ -45,7 +44,7 @@ submit.Onclick = function() {
               list+= '<li>'+ names[i] + '</li>' ;
                 }
              var ul = document.getElementById('namelist');
-             ul.InnerHTML = 'list';
+             ul.innerHTML = 'list';
                 
             }
             
