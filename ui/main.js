@@ -26,9 +26,10 @@ button.Onclick = function(){
    
 };
 
-// name 
+// submit name 
 
 var submit = document.getElementById('submit_btn');
+
 submit.Onclick = function() {
     
     var request = new XMLHttpRequest();
@@ -37,24 +38,24 @@ submit.Onclick = function() {
         if(request.readystate === XMLHttpRequest.DONE) {
             if(request.status === 200){
                 
-        var names = request.responseText;
-        names = JSON.parse(names);
-        var list = '';
-        for (i=0; i < names.length; i++) {
-        list+= '<li>'+ names[i] + '</li>' ;
-                
-            }
+              var names = request.responseText;
+              names = JSON.parse(names);
+              var list = '';
+              for (i=0; i < names.length; i++) {
+              list+= '<li>'+ names[i] + '</li>' ;
+                }
              var ul = document.getElementById('namelist');
              ul.InnerHTML = 'list';
+                
+            }
+            
         }
-   
-    }
     
     };
+    
     var nameInput  = document.getElementById('name');
     var name  = nameInput.value;
     request.open('GET', 'http://addasaiteja.imad.hasura-app.io/submit-name?name='+ name, true);
     request.send(null);
    
 };
-
