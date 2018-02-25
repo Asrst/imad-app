@@ -11,12 +11,22 @@ button.Onclick = function(){
     var request = new XMLHttprequest();
     
     request.onreadystatechange = function() {
+        if(request.readystate === XMLHttpRequest.DONE) {
+            if(request.status === 200){
+                
+        var counter = request.responseText;
+         counter = counter+1;
+         var span = document.getElementById('counterSpan');
+         span.InnerHTML = counter.toString();
+
+            }
+        }
         
     }
     
-    counter = counter+1;
-    var span = document.getElementById('counterSpan');
-    span.InnerHTML = counter.toString();
+    request.open('GET', 'http://addasaiteja.imad.hasura-app.io/counter', true);
+    request.send(null);
+   
 };
 
 // name 
@@ -32,7 +42,8 @@ submit.Onclick = function() {
         if(request.readystate === XMLHttpRequest.DONE) {
             if(request.status === 200){
                 
-        var names = ['name', 'name2'];
+        var names = request.responseText;
+        names = JSON.parse(names);
         var list = '';
         for (i=0; i < names.length; i++) {
         list+= '<li>'+ names[i] + '</li>' ;
@@ -44,12 +55,10 @@ submit.Onclick = function() {
    
     }
     
-    request.open('GET', 'http://addasaiteja.imad.hasura-app.io/', true);
-    request.send(null);
-    
     };
     
-  
+  request.open('GET', 'http://addasaiteja.imad.hasura-app.io/submit-name?name='+ name, true);
+    request.send(null);
    
 };
 
