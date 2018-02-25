@@ -31,8 +31,6 @@ button.Onclick = function(){
 
 // name 
 
-var nameInput  = document.getElementById('name');
-var name  = nameInput.value;
 var submit = document.getElementById('submit_btn');
 submit.Onclick = function() {
     
@@ -56,8 +54,9 @@ submit.Onclick = function() {
     }
     
     };
-    
-  request.open('GET', 'http://addasaiteja.imad.hasura-app.io/submit-name?name='+ name, true);
+    var nameInput  = document.getElementById('name');
+    var name  = nameInput.value;
+    request.open('GET', 'http://addasaiteja.imad.hasura-app.io/submit-name?name='+ name, true);
     request.send(null);
    
 };
