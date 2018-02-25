@@ -11,15 +11,15 @@ button.Onclick = function(){
         if(request.readystate === XMLHttpRequest.DONE) {
             if(request.status === 200){
                 
-        var counter = request.responseText;
-         counter = counter+1;
-         var span = document.getElementById('counterSpan');
-         span.InnerHTML = counter.toString();
+             var counter = request.responseText;
+             counter = counter+1;
+             var span = document.getElementById('counterSpan');
+             span.InnerHTML = counter.toString();
 
             }
         }
         
-    }
+    };
     
     request.open('GET', 'http://addasaiteja.imad.hasura-app.io/counter', true);
     request.send(null);
